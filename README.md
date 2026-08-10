@@ -43,8 +43,8 @@ How to Run (options):
 4. Run the MatrixCalculator.java file.
 
 Author:
-Melanie Pritchard
-BSc Computer Science Student
-University of Sheffield
-@ 2026
+- Melanie Pritchard
+- BSc Computer Science Student
+- University of Sheffield
+- @ 2026
 
