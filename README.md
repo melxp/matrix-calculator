@@ -32,15 +32,15 @@ Project Structure:
 - MatrixHome.java / MatrixHelp.java - navigation pages
 
 How to Run (options):
-1. Clone the repository
+1. Clone the repository 
    git clone https://github.com/yourusername/Matrix-Calculator.git
    
-1. Download ZIP
+   OR Download ZIP
    click the green 'Code' button, select 'Download ZIP', extract the folder
    
-3. Open the project in your Java IDE.
-4. Ensure you have Java 17+ installed.
-5. Run the MatrixCalculator.java file.
+2. Open the project in your Java IDE.
+3. Ensure you have Java 17+ installed.
+4. Run the MatrixCalculator.java file.
 
 Author:
 Melanie Pritchard
