@@ -24,21 +24,21 @@ Tech Stack:
 - Modular helper classes (e.g. MatrixExporter)
 
 Project Structure:
-MatrixCalculator.java - main UI and application logic
-Matrix.java - mathematical operations
-Calculations.java - result and step tracking
-MatrixExporter.java - CSV export functionality
-RoundedButton.java - custom UI component
-MatrixHome.java / MatrixHelp.java - navigation pages
+- MatrixCalculator.java - main UI and application logic
+- Matrix.java - mathematical operations
+- Calculations.java - result and step tracking
+- MatrixExporter.java - CSV export functionality
+- RoundedButton.java - custom UI component
+- MatrixHome.java / MatrixHelp.java - navigation pages
 
 How to Run (options):
 1. Clone the repository
    git clone https://github.com/yourusername/Matrix-Calculator.git
-2. Download ZIP
+1. Download ZIP
    click the green 'Code' button, select 'Download ZIP', extract the folder
-Open the project in your Java IDE.
-Ensure you have Java 17+ installed.
-Run the MatrixCalculator.java file.
+2. Open the project in your Java IDE.
+3. Ensure you have Java 17+ installed.
+4. Run the MatrixCalculator.java file.
 
 Author:
 Melanie Pritchard
