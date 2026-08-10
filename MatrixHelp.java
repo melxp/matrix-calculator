@@ -50,9 +50,10 @@ public class MatrixHelp {
             " • Matrix multiplication\n" +
             " • Scalar multiplication\n" +
             " • Scalar division\n" +
-            " • Matrix transpose\n" +
+            " • Matrix transposition\n" +
+            " • Matrix determinant\n" +
             " • Matrix inverse\n" +
-            " • Matrix reduced-row-echelon-form\n\n" +
+            " • Reduced-row-echelon-form (RREF)\n\n" +
             "How to Use\n" +
             "1. Create two matrices:\n" +
             "   a. Manually:\n" +
