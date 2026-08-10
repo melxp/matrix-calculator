@@ -5,6 +5,9 @@ import java.awt.*;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
 
+import java.io.File;
+import java.io.FileWriter;
+
 public class MatrixCalculator {
 
     private JFrame frame;
@@ -151,7 +154,7 @@ public class MatrixCalculator {
 
         // Create label for copyright text (left)
         JLabel copyright = new JLabel("@2026 Melanie Pritchard. All Rights Reserved.");
-        copyright.setFont(new Font("SansSerif", Font.PLAIN, 12));
+        copyright.setFont(new Font("Monospaced", Font.PLAIN, 12));
 
         // Create sub-panel for buttons
         JPanel actionPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT, 10, 0));
@@ -225,7 +228,8 @@ public class MatrixCalculator {
         row1Panel.setOpaque(false);
         row1Panel.setAlignmentX(Component.LEFT_ALIGNMENT);
 
-        JLabel rows1Label = new JLabel("Rows:      ");
+        JLabel rows1Label = new JLabel("Rows:   ");
+        rows1Label.setFont(new Font("Monospaced", Font.PLAIN, 15));
         rows1Label.setForeground(Color.WHITE);
         
         // Number selection for matrix rows
@@ -241,6 +245,7 @@ public class MatrixCalculator {
         col1Panel.setAlignmentX(Component.LEFT_ALIGNMENT);
 
         JLabel cols1Label = new JLabel("Columns:");
+        cols1Label.setFont(new Font("Monospaced", Font.PLAIN, 15));
         cols1Label.setForeground(Color.WHITE);
 
         // Number selection for matrix columns
@@ -317,7 +322,8 @@ public class MatrixCalculator {
         row2Panel.setOpaque(false);
         row2Panel.setAlignmentX(Component.LEFT_ALIGNMENT);
 
-        JLabel rows2Label = new JLabel("Rows:      ");
+        JLabel rows2Label = new JLabel("Rows:    ");
+        rows2Label.setFont(new Font("Monospaced", Font.PLAIN, 14));
         rows2Label.setForeground(Color.WHITE);
 
         JSpinner rows2Spinner = new JSpinner(new SpinnerNumberModel(2, 1, 10, 1));
@@ -331,6 +337,7 @@ public class MatrixCalculator {
         col2Panel.setAlignmentX(Component.LEFT_ALIGNMENT);
 
         JLabel cols2Label = new JLabel("Columns:");
+        cols2Label.setFont(new Font("Monospaced", Font.PLAIN, 15));
         cols2Label.setForeground(Color.WHITE);
 
         JSpinner cols2Spinner = new JSpinner(new SpinnerNumberModel(2, 1, 10, 1));
@@ -433,7 +440,7 @@ public class MatrixCalculator {
         // Create label for input box
         JLabel scalarLabel = new JLabel("Scalar:");
         scalarLabel.setForeground(Color.WHITE);
-        scalarLabel.setFont(new Font("SansSerif", Font.PLAIN, 14));
+        scalarLabel.setFont(new Font("Monospaced", Font.PLAIN, 14));
         scalarLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
  
         // Create field for user to enter scalar
@@ -582,7 +589,7 @@ public class MatrixCalculator {
 
         JLabel scalarLabel = new JLabel("Scalar:");
         scalarLabel.setForeground(Color.WHITE);
-        scalarLabel.setFont(new Font("SansSerif", Font.PLAIN, 14));
+        scalarLabel.setFont(new Font("Monospaced", Font.PLAIN, 14));
         scalarLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
 
         scalar2Field = new JTextField();
@@ -714,18 +721,22 @@ public class MatrixCalculator {
 
         // Labels to show the order for each matrix
         JLabel formatLabel = new JLabel("Format:");
+        formatLabel.setFont(new Font("Monospaced", Font.PLAIN, 14));
         formatLabel.setForeground(Color.WHITE);
         formatLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
 
         JLabel format1Label = new JLabel("Matrix 1 + Matrix 2");
+        format1Label.setFont(new Font("Monospaced", Font.PLAIN, 14));
         format1Label.setForeground(Color.WHITE);
         format1Label.setAlignmentX(Component.LEFT_ALIGNMENT);
 
         JLabel format2Label = new JLabel("Matrix 1 - Matrix 2");
+        format2Label.setFont(new Font("Monospaced", Font.PLAIN, 14));
         format2Label.setForeground(Color.WHITE);
         format2Label.setAlignmentX(Component.LEFT_ALIGNMENT);
 
         JLabel format3Label = new JLabel("Matrix 1 * Matrix 2");
+        format3Label.setFont(new Font("Monospaced", Font.PLAIN, 14));
         format3Label.setForeground(Color.WHITE);
         format3Label.setAlignmentX(Component.LEFT_ALIGNMENT);
 
@@ -874,11 +885,52 @@ public class MatrixCalculator {
 
         copyToMatrix2Button.addActionListener(e -> copyOutputToInputGrid(2));
 
+        // Create button to export output matrix to CSV file
+        JButton exportCSVButton = new JButton("Export CSV");
+        exportCSVButton.setFont(new Font("Monospaced", Font.BOLD, 12));
+        exportCSVButton.setBackground(Color.WHITE);
+        exportCSVButton.setFocusable(false);
+
+        exportCSVButton.addActionListener(e -> {
+
+            if (lastResultMatrix == null) {
+                JOptionPane.showMessageDialog(frame, "No result to export.");
+                return;
+            }
+
+            String csv = MatrixExporter.toCSV(lastResultMatrix);
+
+            JFileChooser chooser = new JFileChooser();
+            chooser.setDialogTitle("Save CSV File");
+
+            int choice = chooser.showSaveDialog(frame);
+
+            if (choice == JFileChooser.APPROVE_OPTION) {
+                try {
+                    File file = chooser.getSelectedFile();
+
+                    if (!file.getName().toLowerCase().endsWith(".csv")) {
+                        file = new File(file.getAbsolutePath() + ".csv");
+                    }
+
+                    FileWriter writer = new FileWriter(file);
+                    writer.write(csv);
+                    writer.close();
+
+                    JOptionPane.showMessageDialog(frame, "CSV exported successfully.");
+
+                } catch (Exception ex) {
+                    JOptionPane.showMessageDialog(frame, "Error saving file " + ex.getMessage());
+                }
+            }
+        });
+
         JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 5));
         buttonPanel.setOpaque(false);
         buttonPanel.add(copyButton);
         buttonPanel.add(copyToMatrix1Button);
         buttonPanel.add(copyToMatrix2Button);
+        buttonPanel.add(exportCSVButton);
        
         outer.add(scroll, BorderLayout.CENTER); 
         outer.add(buttonPanel, BorderLayout.SOUTH); 
