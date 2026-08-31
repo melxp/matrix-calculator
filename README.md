@@ -3,6 +3,10 @@ A desktop application built in Java Swing for performing a wide range of matrix 
 
 The user can create custom matrix grids (1x1 to 10x10), or generate random matrices. 
 
+## Demo
+
+https://github.com/melxp/Matrix-Calculator/blob/main/demo/MatrixCalculatorDemo.mp4
+
 Features:
 - Matrix addition
 - Matrix subtraction
