@@ -7,6 +7,12 @@ The user can create custom matrix grids (1x1 to 10x10), or generate random matri
 
 https://github.com/melxp/Matrix-Calculator/blob/main/demo/MatrixCalculatorDemo.mp4
 
+## Demo
+
+Here is a demonstration of the Matrix Calculator:
+
+[▶️ Watch the Matrix Calculator Demo](demo/MatrixCalculatorDemo.mp4)
+
 Features:
 - Matrix addition
 - Matrix subtraction
