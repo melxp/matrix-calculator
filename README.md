@@ -1,4 +1,4 @@
-# Matrix-Calculator
+# Matrix Calculator
 A desktop application built in Java Swing for performing a wide range of matrix operations. It allows users to generate matrices, apply mathematical transformations, view step-by-step solutions, and export results for further use.
 
 The user can create custom matrix grids (1x1 to 10x10), or generate random matrices. 
@@ -6,7 +6,8 @@ The user can create custom matrix grids (1x1 to 10x10), or generate random matri
 
 ## Demo
 
-<img width="800" height="470" alt="Calculator" src="https://github.com/user-attachments/assets/1c159583-dda2-4122-a179-156c40da1dee" />
+![Calculator](https://github.com/melxp/Matrix-Calculator/blob/main/Designs/Home%20Page.png)
+
 
 [Watch the Matrix Calculator Demo](demo/MatrixCalculatorDemo.mp4)
 
