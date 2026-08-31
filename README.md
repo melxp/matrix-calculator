@@ -6,7 +6,7 @@ The user can create custom matrix grids (1x1 to 10x10), or generate random matri
 
 ## Demo
 
-![Calculator](https://github.com/melxp/Matrix-Calculator/blob/main/Designs/Home%20Page.png)
+![Calculator]([https://github.com/melxp/Matrix-Calculator/blob/main/Designs/Home%20Page.png](https://github.com/melxp/Matrix-Calculator/blob/main/Designs/Calculator%20Page.png))
 
 
 [Watch the Matrix Calculator Demo](demo/MatrixCalculatorDemo.mp4)
