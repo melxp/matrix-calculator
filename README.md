@@ -3,11 +3,13 @@ A desktop application built in Java Swing for performing a wide range of matrix 
 
 The user can create custom matrix grids (1x1 to 10x10), or generate random matrices. 
 
+
 ## Demo
 
-<img width="600" height="352" alt="Calculator" src="https://github.com/user-attachments/assets/1c159583-dda2-4122-a179-156c40da1dee" />
+<img width="800" height="470" alt="Calculator" src="https://github.com/user-attachments/assets/1c159583-dda2-4122-a179-156c40da1dee" />
 
 [Watch the Matrix Calculator Demo](demo/MatrixCalculatorDemo.mp4)
+
 
 ## Features
 
@@ -23,6 +25,7 @@ The user can create custom matrix grids (1x1 to 10x10), or generate random matri
 
 The output is displayed as a step-by-step solution, with the final answer shown at the bottom. Users can copy the result to the clipboard, or back into Matrix 1/2. Additionally, results can be exported as a CSV file for external use.
 
+
 ## Tech Stack
 
 - Java 17+
@@ -30,6 +33,7 @@ The output is displayed as a step-by-step solution, with the final answer shown 
 - AWT (layout and rendering)
 - Custom RoundedButton components
 - Modular helper classes (e.g. MatrixExporter)
+
 
 ## How to Run 
 Option 1: Clone the repository
@@ -42,6 +46,7 @@ Then:
 Option 2: Download the ZIP
 Click the green Code button on GitHub and select Download ZIP.
 Extract the project, open it in your Java IDE, ensure Java 17+ is installed, and run `Matrix Calculator.java`.
+
 
 ## Author
 - Melanie Pritchard
